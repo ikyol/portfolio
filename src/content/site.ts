@@ -3,7 +3,7 @@ export const site = {
   name: "Aikyol Sergekbekov",
   email: "aikyol.dev@gmail.com",
   telegram: "ikyol", // username without @
-  github: "", // username
+  github: "ikyol", // username
   linkedin: "", // profile slug: linkedin.com/in/<slug>
 };
 
