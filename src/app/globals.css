@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14111f;
+  --color-paper: #fbf7f2;
+  --color-muted: #5b5670;
+  --color-brand-violet: #6d4aff;
+  --color-brand-pink: #ff4fa3;
+  --color-brand-orange: #ff8a3d;
+  --color-brand-lime: #c8f560;
+  --color-brand-cyan: #3dd6f5;
+}
+
+@theme inline {
+  --font-display: var(--font-unbounded), system-ui, sans-serif;
+  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+@utility shadow-brutal-sm {
+  box-shadow: 3px 3px 0 0 var(--color-ink);
+}
+
+@utility shadow-brutal {
+  box-shadow: 6px 6px 0 0 var(--color-ink);
+}
+
+@utility shadow-brutal-lg {
+  box-shadow: 10px 10px 0 0 var(--color-ink);
+}
+
+@utility shadow-brutal-pink {
+  box-shadow: 6px 6px 0 0 var(--color-brand-pink);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-brand-pink);
+  color: white;
+}
+
+/* Gradient text with a slow shimmer */
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--color-brand-violet),
+    var(--color-brand-pink),
+    var(--color-brand-orange),
+    var(--color-brand-violet)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Moving gradient background */
+.bg-animated {
+  background: linear-gradient(
+    120deg,
+    var(--color-brand-violet),
+    var(--color-brand-pink),
+    var(--color-brand-orange),
+    var(--color-brand-violet)
+  );
+  background-size: 300% 300%;
+  animation: gradient-move 14s ease infinite;
+}
+
+@keyframes gradient-move {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Soft floating blobs behind the hero */
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(64px);
+  opacity: 0.55;
+  animation: float 18s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(40px, -30px) scale(1.1);
+  }
+  100% {
+    transform: translate(-30px, 20px) scale(0.95);
+  }
+}
+
+.sparkle {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.marquee {
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Scroll reveal, toggled by <Reveal> */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .text-gradient,
+  .bg-animated,
+  .blob,
+  .sparkle,
+  .marquee {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
