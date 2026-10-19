@@ -61,7 +61,10 @@ export function FeaturedCase({ dict }: { dict: Dictionary }) {
                       key={row.area}
                       className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-2 px-5 py-4 md:grid-cols-[1fr_7rem_7rem]"
                     >
-                      <span className="col-span-2 font-semibold md:col-span-1">{row.area}</span>
+                      <div className="col-span-2 md:col-span-1">
+                        <p className="font-semibold">{row.area}</p>
+                        <p className="mt-0.5 text-sm text-muted">{row.note}</p>
+                      </div>
                       <span className="whitespace-nowrap font-mono text-muted line-through decoration-brand-pink decoration-2 md:text-right">
                         {row.before}
                       </span>
@@ -83,13 +86,17 @@ export function FeaturedCase({ dict }: { dict: Dictionary }) {
               <div className="grid gap-10 md:grid-cols-2">
                 <div>
                   <Label>{c.modulesTitle}</Label>
-                  <div className="flex flex-wrap gap-2">
+                  <ul className="space-y-2.5">
                     {c.modules.map((module, i) => (
-                      <Chip key={module} className={accents[i % accents.length]}>
-                        {module}
-                      </Chip>
+                      <li key={module} className="flex items-start gap-3">
+                        <span
+                          aria-hidden
+                          className={`mt-1.5 h-3 w-3 shrink-0 rounded-full border-2 border-ink ${accents[i % accents.length]}`}
+                        />
+                        <span className="font-medium">{module}</span>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
                 <div>
                   <Label>{c.stackTitle}</Label>
