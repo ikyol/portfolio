@@ -7,6 +7,7 @@ type Project = {
   name: string;
   text: string;
   features: string[];
+  status?: string;
 };
 
 const en = {
@@ -141,6 +142,17 @@ const en = {
     kicker: "Earlier projects",
     title: "More things I've built",
     items: [
+      {
+        name: "Makor",
+        status: "In development",
+        text: "A PWA for learning languages in the spirit of Duolingo: short lessons, a personal dictionary, practice exercises and an AI mentor that guides with questions instead of giving answers.",
+        features: [
+          "Works on phone and desktop, installs like an app",
+          "Personal dictionary built from the texts you read",
+          "Levels, progress and game mechanics",
+          "AI mentor right inside the lessons",
+        ],
+      },
       {
         name: "K-ATB",
         text: "A platform that helps tourists live comfortably in Kyrgyzstan. REST API for the client app, background jobs and caching, cloud infrastructure.",
@@ -392,6 +404,17 @@ const ru: Dictionary = {
     kicker: "Другие проекты",
     title: "Ещё проекты",
     items: [
+      {
+        name: "Makor",
+        status: "В разработке",
+        text: "PWA для изучения языков в стиле Duolingo: короткие уроки, личный словарь, тренировки и ИИ-наставник, который наводит вопросами, а не даёт готовые ответы.",
+        features: [
+          "Работает на телефоне и компьютере, ставится как приложение",
+          "Личный словарь из прочитанных текстов",
+          "Уровни, прогресс и игровые механики",
+          "ИИ-наставник прямо в уроках",
+        ],
+      },
       {
         name: "K-ATB",
         text: "Платформа, которая помогает туристам с комфортом жить в Кыргызстане. REST API для клиентского приложения, фоновые задачи и кеширование, облачная инфраструктура.",
