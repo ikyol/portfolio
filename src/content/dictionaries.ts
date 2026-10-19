@@ -8,6 +8,7 @@ type Project = {
   text: string;
   features: string[];
   status?: string;
+  tech?: string;
 };
 
 const en = {
@@ -141,6 +142,7 @@ const en = {
   projects: {
     kicker: "Earlier projects",
     title: "More things I've built",
+    techLabel: "Under the hood:",
     items: [
       {
         name: "Makor",
@@ -154,28 +156,33 @@ const en = {
         ],
       },
       {
-        name: "K-ATB",
-        text: "A platform that helps tourists live comfortably in Kyrgyzstan. REST API for the client app, background jobs and caching, cloud infrastructure.",
+        name: "SVUG & SED",
+        text: "The Guarantee Fund's CRM: tracking loan guarantees plus electronic document workflow — approvals, committee meetings and e-signatures.",
+        tech: "Django, DRF, Celery, Redis, PostgreSQL, Elasticsearch, Channels, React and TypeScript, Docker, GitLab CI.",
         features: [],
       },
       {
         name: "Nova Panel CRM",
-        text: "CRM system with background processing through message queues. Covered by unit and integration tests, with regular code reviews.",
+        text: "A CRM for managing clients and requests: the whole team keeps customers, requests and tasks in one place.",
+        tech: "FastAPI, PostgreSQL with SQLAlchemy, background processing through RabbitMQ queues, Docker, unit and integration tests with Pytest.",
         features: [],
       },
       {
         name: "DNS System",
-        text: "Service that keeps the database and Cloudflare DNS records in sync: changes in the system reach Cloudflare automatically. Schema migrations and test coverage.",
+        text: "A domain management service: DNS settings sync to Cloudflare automatically, with no manual work in the Cloudflare dashboard.",
+        tech: "FastAPI and Pydantic, Cloudflare API integration, PostgreSQL with SQLAlchemy and Alembic, Pytest.",
         features: [],
       },
       {
         name: "Hostel Booking",
-        text: "Hotel and hostel booking website with server-rendered pages. Background jobs and caching, tests, deployed on Google Cloud.",
+        text: "An online booking service for hotels and hostels: find a place to stay, pick a room and book it — all on one site.",
+        tech: "Django with server-rendered pages, PostgreSQL, Celery and Redis for background jobs, Docker on Google Cloud.",
         features: [],
       },
       {
         name: "Makers Teamwork",
-        text: "A platform where junior developers form teams and build projects together. Real-time chat, async backend and schema migrations.",
+        text: "A platform for junior developers to find a team, build projects together and chat with teammates right on the site.",
+        tech: "Async FastAPI backend, real-time chat on WebSocket, PostgreSQL with SQLAlchemy, Docker.",
         features: [],
       },
     ] as Project[],
@@ -403,6 +410,7 @@ const ru: Dictionary = {
   projects: {
     kicker: "Другие проекты",
     title: "Ещё проекты",
+    techLabel: "Под капотом:",
     items: [
       {
         name: "Makor",
@@ -416,28 +424,33 @@ const ru: Dictionary = {
         ],
       },
       {
-        name: "K-ATB",
-        text: "Платформа, которая помогает туристам с комфортом жить в Кыргызстане. REST API для клиентского приложения, фоновые задачи и кеширование, облачная инфраструктура.",
+        name: "СВУГиСЭД",
+        text: "CRM-система Гарантийного фонда: учёт поручительств по кредитам и электронный документооборот — согласования, заседания комитетов и электронная подпись.",
+        tech: "Django, DRF, Celery, Redis, PostgreSQL, Elasticsearch, Channels, React и TypeScript, Docker, GitLab CI.",
         features: [],
       },
       {
         name: "Nova Panel CRM",
-        text: "CRM-система с фоновой обработкой задач через очереди сообщений. Покрыта unit- и интеграционными тестами, код проходил регулярное ревью.",
+        text: "CRM-система для работы с клиентами и заявками: вся команда ведёт клиентов, заявки и задачи в одном месте.",
+        tech: "FastAPI, PostgreSQL и SQLAlchemy, фоновая обработка через очереди RabbitMQ, Docker, unit- и интеграционные тесты на Pytest.",
         features: [],
       },
       {
         name: "DNS System",
-        text: "Сервис синхронизации базы данных с DNS-записями в Cloudflare: изменения в системе автоматически попадают в Cloudflare. Миграции схемы и покрытие тестами.",
+        text: "Сервис управления доменами: настройки DNS автоматически синхронизируются с Cloudflare, без ручной работы в панели.",
+        tech: "FastAPI и Pydantic, интеграция с Cloudflare API, PostgreSQL, SQLAlchemy и Alembic, тесты на Pytest.",
         features: [],
       },
       {
         name: "Hostel Booking",
-        text: "Сайт бронирования отелей и хостелов с серверным рендерингом страниц. Фоновые задачи и кеширование, тесты, развёртывание в Google Cloud.",
+        text: "Онлайн-сервис бронирования отелей и хостелов: найти жильё, выбрать номер и забронировать — всё на одном сайте.",
+        tech: "Django с серверным рендерингом страниц, PostgreSQL, фоновые задачи на Celery и Redis, Docker в Google Cloud.",
         features: [],
       },
       {
         name: "Makers Teamwork",
-        text: "Платформа, где джуниоры собираются в команды и вместе делают проекты. Чат в реальном времени, асинхронный бэкенд и миграции схемы.",
+        text: "Платформа для начинающих разработчиков: найти команду, вместе сделать проект и общаться с командой прямо на сайте.",
+        tech: "Асинхронный бэкенд на FastAPI, чат в реальном времени на WebSocket, PostgreSQL и SQLAlchemy, Docker.",
         features: [],
       },
     ],

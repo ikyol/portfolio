@@ -33,6 +33,14 @@ export function Projects({ dict }: { dict: Dictionary }) {
                 </div>
                 <h3 className="mt-5 font-display text-xl font-bold">{project.name}</h3>
                 <p className="mt-3 leading-relaxed text-white/70">{project.text}</p>
+                {project.tech && (
+                  <p className="mt-4 text-sm leading-relaxed text-white/50">
+                    <span className="font-mono text-xs uppercase tracking-widest text-brand-lime/80">
+                      {projects.techLabel}
+                    </span>{" "}
+                    {project.tech}
+                  </p>
+                )}
                 {project.features.length > 0 && (
                   <ul className="mt-5 space-y-2">
                     {project.features.map((feature) => (
