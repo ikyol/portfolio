@@ -120,7 +120,7 @@ const en = {
       {
         title: "Web apps & MVPs",
         text: "From idea to production: backend, frontend, database and deploy. One developer for the whole stack.",
-        tags: ["Django", "FastAPI", "React", "Next.js"],
+        tags: ["Django", "FastAPI", "Go", "React", "Next.js", "PWA"],
       },
       {
         title: "AI integrations",
@@ -130,7 +130,7 @@ const en = {
       {
         title: "Performance & code audit",
         text: "Slow pages, N+1 queries, heavy reports? I find the bottlenecks, fix them and show before/after numbers.",
-        tags: ["PostgreSQL", "Celery", "Redis", "Profiling"],
+        tags: ["PostgreSQL", "ClickHouse", "Celery", "Redis", "Profiling"],
       },
       {
         title: "Telegram bots & automation",
@@ -174,9 +174,9 @@ const en = {
         features: [],
       },
       {
-        name: "Hostel Booking",
-        text: "An online booking service for hotels and hostels: find a place to stay, pick a room and book it — all on one site.",
-        tech: "Django with server-rendered pages, PostgreSQL, Celery and Redis for background jobs, Docker on Google Cloud.",
+        name: "Kozomol",
+        text: "A GPS car-tracking app for banks and companies: every car on a live map, alerts when a car leaves its zone or speeds, remote engine lock and trip reports.",
+        tech: "Go for receiving data from GPS trackers, Django and DRF, PostgreSQL, ClickHouse, Redis Streams, Celery, Centrifugo for the live map, a React and TypeScript PWA with MapLibre maps, Docker, Grafana.",
         features: [],
       },
       {
@@ -388,7 +388,7 @@ const ru: Dictionary = {
       {
         title: "Веб-приложения и MVP",
         text: "От идеи до продакшена: бэкенд, фронтенд, база данных и деплой. Один разработчик на весь стек.",
-        tags: ["Django", "FastAPI", "React", "Next.js"],
+        tags: ["Django", "FastAPI", "Go", "React", "Next.js", "PWA"],
       },
       {
         title: "AI-интеграции",
@@ -398,7 +398,7 @@ const ru: Dictionary = {
       {
         title: "Ускорение и аудит кода",
         text: "Медленные страницы, N+1, тяжёлые отчёты? Нахожу узкие места, исправляю и показываю замеры «до» и «после».",
-        tags: ["PostgreSQL", "Celery", "Redis", "Профилирование"],
+        tags: ["PostgreSQL", "ClickHouse", "Celery", "Redis", "Профилирование"],
       },
       {
         title: "Telegram-боты и автоматизация",
@@ -442,9 +442,9 @@ const ru: Dictionary = {
         features: [],
       },
       {
-        name: "Hostel Booking",
-        text: "Онлайн-сервис бронирования отелей и хостелов: найти жильё, выбрать номер и забронировать — всё на одном сайте.",
-        tech: "Django с серверным рендерингом страниц, PostgreSQL, фоновые задачи на Celery и Redis, Docker в Google Cloud.",
+        name: "Kozomol",
+        text: "Приложение для контроля автомобилей по GPS для банков и компаний: все авто на живой карте, тревога при выезде из зоны и превышении скорости, удалённая блокировка двигателя и отчёты о поездках.",
+        tech: "Go для приёма данных с GPS-трекеров, Django и DRF, PostgreSQL, ClickHouse, Redis Streams, Celery, Centrifugo для живой карты, PWA на React и TypeScript с картами MapLibre, Docker, Grafana.",
         features: [],
       },
       {
