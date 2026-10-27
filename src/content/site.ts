@@ -8,29 +8,6 @@ export const site = {
   linkedin: "", // profile slug: linkedin.com/in/<slug>
 };
 
-export const marqueeStack = [
-  "Python",
-  "Django",
-  "FastAPI",
-  "Go",
-  "PostgreSQL",
-  "ClickHouse",
-  "Redis",
-  "Celery",
-  "RabbitMQ",
-  "Elasticsearch",
-  "WebSocket",
-  "React",
-  "Next.js",
-  "TypeScript",
-  "PWA",
-  "Tailwind",
-  "Docker",
-  "Grafana",
-  "AWS",
-  "GCP",
-];
-
 export const caseStack = [
   "Python",
   "Django",

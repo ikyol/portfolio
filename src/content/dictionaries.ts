@@ -27,28 +27,38 @@ const en = {
   langSwitch: { label: "Language" },
   menu: { open: "Open menu", close: "Close menu" },
   hero: {
-    badge: "Open for freelance projects",
-    eyebrow: "Full-stack development · UI/UX design",
-    titleStart: "I make web systems",
-    titleAccent: "fly",
-    titleEnd: ".",
+    title: ["The report took", "54 seconds.", "Now it takes 0.6."],
     subtitle:
-      "Senior full-stack developer with 5+ years of commercial experience. I build CRMs, document workflows, APIs and AI integrations — and turn slow systems into fast ones, with numbers to prove it.",
+      "I'm Aikyol, a senior full-stack developer with 5+ years of commercial experience: Python, Django, React. I build CRMs, document workflows, APIs and AI integrations, and I speed up whatever is slow, with measurements to prove it.",
     ctaPrimary: "Start a project",
     ctaSecondary: "See the case study",
-    location: "Bishkek, Kyrgyzstan · UTC+6",
+    status: "Open for new projects. Bishkek, UTC+6.",
   },
-  stats: [
-    { value: "5+", label: "years of commercial experience" },
-    { value: "90×", label: "faster PDF reports" },
-    { value: "400×", label: "fewer database requests per page" },
-    { value: "2 300+", label: "commits in the main project" },
-  ],
+  speedTest: {
+    label: "Speed test",
+    before: "before",
+    after: "after",
+    of: "of",
+    unit: "s",
+    rows: [
+      {
+        title: "Generating a PDF report",
+        before: { value: 54, label: "54 s" },
+        after: { value: 0.6, label: "0.6 s" },
+      },
+      {
+        title: "A document with large tables",
+        before: { value: 7, label: "7 s" },
+        after: { value: 0.003, label: "3 ms" },
+      },
+    ],
+    caption: "The bars move at real speed. Measured in the Guarantee Fund's CRM.",
+    rerun: "Run again",
+  },
   case: {
-    kicker: "Featured case",
     title: "CRM & document management system for the Guarantee Fund",
-    client: "Guarantee Fund · Kyrgyzstan",
-    role: "Full-stack developer · #1 contributor",
+    client: "Guarantee Fund, Kyrgyzstan",
+    role: "Full-stack developer, #1 contributor",
     period: "Oct 2024 — now",
     summary:
       "The Guarantee Fund backs bank loans for small and medium businesses. Its staff do all their daily work in this system: issuing loan guarantees, approving documents, holding committee and board meetings, and signing papers with electronic signatures. About 28 sections built on Django and React.",
@@ -59,41 +69,62 @@ const en = {
       { value: "~25k", label: "lines of automated tests that keep things from breaking" },
     ],
     resultsTitle: "Measured results",
-    resultsHead: { area: "What", before: "Before", after: "After" },
+    resultsHead: { before: "before", after: "after" },
+    timeTitle: "Waiting time",
+    requestsTitle: "Database requests",
+    requestsNote: "One dot is one request to the database.",
     results: [
       {
         area: "Generating PDF reports",
         note: "A report is ready right away instead of after a minute of waiting",
+        kind: "time",
+        beforeValue: 54,
+        afterValue: 0.6,
         before: "54 s",
         after: "0.6 s",
       },
       {
         area: "Building documents with large tables",
         note: "This used to slow down every document in the system",
+        kind: "time",
+        beforeValue: 7,
+        afterValue: 0.003,
         before: "7 s",
         after: "3 ms",
       },
       {
         area: "Opening a list of documents",
         note: "Database requests per page: now always 5, however many rows are shown",
+        kind: "requests",
+        beforeValue: 2068,
+        afterValue: 5,
         before: "2 068",
         after: "5",
       },
       {
         area: "Opening a single document",
         note: "Database requests needed to show one document",
+        kind: "requests",
+        beforeValue: 339,
+        afterValue: 9,
         before: "339",
         after: "9",
       },
       {
         area: "Uploading a file",
         note: "Heavy processing moved to the background, so people don't wait",
+        kind: "time",
+        beforeValue: 1,
+        afterValue: 0.002,
         before: "~1 s",
         after: "2 ms",
       },
       {
         area: "Restarting the system after an update",
         note: "Updates go out faster, with almost no downtime",
+        kind: "time",
+        beforeValue: 17,
+        afterValue: 1,
         before: "17 s",
         after: "1 s",
       },
@@ -115,7 +146,6 @@ const en = {
     stackTitle: "Stack",
   },
   services: {
-    kicker: "Services",
     title: "What I can do for you",
     items: [
       {
@@ -141,7 +171,6 @@ const en = {
     ],
   },
   projects: {
-    kicker: "Earlier projects",
     title: "More things I've built",
     techLabel: "Under the hood:",
     items: [
@@ -189,7 +218,6 @@ const en = {
     ] as Project[],
   },
   experience: {
-    kicker: "Experience",
     title: "Where I've worked",
     items: [
       {
@@ -224,7 +252,6 @@ const en = {
     ],
   },
   design: {
-    kicker: "Design",
     title: "Interface design you can click through",
     text: "I design web and mobile app interfaces and turn them into interactive prototypes that run right in the browser. And since I'm also a developer, every screen is realistic to build.",
     items: [
@@ -262,7 +289,6 @@ const en = {
     ],
   },
   contact: {
-    kicker: "Contact",
     title: "Have a project? Let's talk.",
     text: "Tell me about your task and I'll suggest how to solve it. Working with clients from the CIS, Europe and the US.",
     labels: {
@@ -271,7 +297,7 @@ const en = {
       github: "GitHub",
       linkedin: "LinkedIn",
     },
-    timezone: "Bishkek · UTC+6 · flexible hours for EU & US clients",
+    timezone: "Bishkek, UTC+6. Flexible hours for clients in Europe and the US.",
   },
   footer: {
     built: "Built with Next.js, TypeScript & Tailwind",
@@ -296,28 +322,38 @@ const ru: Dictionary = {
   langSwitch: { label: "Язык" },
   menu: { open: "Открыть меню", close: "Закрыть меню" },
   hero: {
-    badge: "Беру новые проекты",
-    eyebrow: "Full-stack разработка · UI/UX дизайн",
-    titleStart: "Делаю веб-системы, которые",
-    titleAccent: "летают",
-    titleEnd: ".",
+    title: ["Отчёт собирался", "54 секунды.", "Теперь — 0,6."],
     subtitle:
-      "Сеньор full-stack разработчик, 5+ лет коммерческого опыта. Делаю CRM, системы документооборота, API и AI-интеграции, а медленные системы превращаю в быстрые — и подтверждаю это замерами.",
+      "Я Айколь, сеньор full-stack разработчик, 5+ лет коммерческого опыта: Python, Django, React. Делаю CRM, документооборот, API и AI-интеграции, а то, что тормозит, ускоряю и подтверждаю замерами.",
     ctaPrimary: "Обсудить проект",
     ctaSecondary: "Смотреть кейс",
-    location: "Бишкек, Кыргызстан · UTC+6",
+    status: "Беру новые проекты. Бишкек, UTC+6.",
   },
-  stats: [
-    { value: "5+", label: "лет коммерческого опыта" },
-    { value: "90×", label: "быстрее PDF-отчёты" },
-    { value: "400×", label: "меньше запросов к базе на страницу" },
-    { value: "2 300+", label: "коммитов в главном проекте" },
-  ],
+  speedTest: {
+    label: "Замер скорости",
+    before: "было",
+    after: "стало",
+    of: "из",
+    unit: "с",
+    rows: [
+      {
+        title: "Формирование PDF-отчёта",
+        before: { value: 54, label: "54 с" },
+        after: { value: 0.6, label: "0,6 с" },
+      },
+      {
+        title: "Документ с большими таблицами",
+        before: { value: 7, label: "7 с" },
+        after: { value: 0.003, label: "3 мс" },
+      },
+    ],
+    caption: "Полосы идут с реальной скоростью. Замеры из CRM Гарантийного фонда.",
+    rerun: "Запустить ещё раз",
+  },
   case: {
-    kicker: "Главный кейс",
     title: "CRM и система документооборота для Гарантийного фонда",
-    client: "Гарантийный фонд · Кыргызстан",
-    role: "Full-stack разработчик · №1 по вкладу",
+    client: "Гарантийный фонд, Кыргызстан",
+    role: "Full-stack разработчик, №1 по вкладу",
     period: "Окт 2024 — сейчас",
     summary:
       "Гарантийный фонд выступает поручителем по банковским кредитам для малого и среднего бизнеса. Вся ежедневная работа сотрудников идёт в этой системе: выдача поручительств, согласование документов, заседания комитетов и руководства, подписание бумаг электронной подписью. Около 28 разделов на Django и React.",
@@ -328,41 +364,62 @@ const ru: Dictionary = {
       { value: "~25 тыс.", label: "строк автотестов, чтобы ничего не ломалось" },
     ],
     resultsTitle: "Результаты в замерах",
-    resultsHead: { area: "Что", before: "Было", after: "Стало" },
+    resultsHead: { before: "было", after: "стало" },
+    timeTitle: "Время ожидания",
+    requestsTitle: "Запросы к базе данных",
+    requestsNote: "Одна точка — один запрос к базе.",
     results: [
       {
         area: "Формирование PDF-отчётов",
         note: "Отчёт готов сразу, а не через минуту ожидания",
+        kind: "time",
+        beforeValue: 54,
+        afterValue: 0.6,
         before: "54 с",
         after: "0,6 с",
       },
       {
         area: "Создание документов с большими таблицами",
         note: "Раньше это замедляло каждый документ в системе",
+        kind: "time",
+        beforeValue: 7,
+        afterValue: 0.003,
         before: "7 с",
         after: "3 мс",
       },
       {
         area: "Открытие списка документов",
         note: "Запросов к базе данных на страницу: теперь всегда 5, сколько бы строк ни было",
+        kind: "requests",
+        beforeValue: 2068,
+        afterValue: 5,
         before: "2 068",
         after: "5",
       },
       {
         area: "Открытие одного документа",
         note: "Запросов к базе, чтобы показать документ",
+        kind: "requests",
+        beforeValue: 339,
+        afterValue: 9,
         before: "339",
         after: "9",
       },
       {
         area: "Загрузка файла",
         note: "Тяжёлая обработка ушла в фон, и пользователь не ждёт",
+        kind: "time",
+        beforeValue: 1,
+        afterValue: 0.002,
         before: "~1 с",
         after: "2 мс",
       },
       {
         area: "Перезапуск системы после обновления",
         note: "Обновления выходят быстрее и почти без простоя",
+        kind: "time",
+        beforeValue: 17,
+        afterValue: 1,
         before: "17 с",
         after: "1 с",
       },
@@ -384,7 +441,6 @@ const ru: Dictionary = {
     stackTitle: "Стек",
   },
   services: {
-    kicker: "Услуги",
     title: "Чем могу помочь",
     items: [
       {
@@ -410,7 +466,6 @@ const ru: Dictionary = {
     ],
   },
   projects: {
-    kicker: "Другие проекты",
     title: "Ещё проекты",
     techLabel: "Под капотом:",
     items: [
@@ -458,7 +513,6 @@ const ru: Dictionary = {
     ],
   },
   experience: {
-    kicker: "Опыт",
     title: "Места работы",
     items: [
       {
@@ -493,7 +547,6 @@ const ru: Dictionary = {
     ],
   },
   design: {
-    kicker: "Дизайн",
     title: "Дизайн интерфейсов, который можно потрогать",
     text: "Проектирую интерфейсы веб- и мобильных приложений и собираю их в интерактивные прототипы, которые работают прямо в браузере. А так как я ещё и разработчик, каждый экран реально воплотить в коде.",
     items: [
@@ -531,7 +584,6 @@ const ru: Dictionary = {
     ],
   },
   contact: {
-    kicker: "Контакты",
     title: "Есть проект? Давайте обсудим.",
     text: "Расскажите о задаче — предложу, как её решить. Работаю с клиентами из СНГ, Европы и США.",
     labels: {
@@ -540,7 +592,7 @@ const ru: Dictionary = {
       github: "GitHub",
       linkedin: "LinkedIn",
     },
-    timezone: "Бишкек · UTC+6 · гибкий график под Европу и США",
+    timezone: "Бишкек, UTC+6. Гибкий график под клиентов из Европы и США.",
   },
   footer: {
     built: "Сделано на Next.js, TypeScript и Tailwind",

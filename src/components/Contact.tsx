@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/content/dictionaries";
 import { site } from "@/content/site";
-import { Container, SectionHeading } from "./ui";
+import { Container } from "./ui";
 
 export function Contact({ dict }: { dict: Dictionary }) {
   const { contact, footer } = dict;
@@ -28,17 +28,8 @@ export function Contact({ dict }: { dict: Dictionary }) {
   ].filter((link) => link.enabled);
 
   return (
-    <footer id="contact" className="relative scroll-mt-20 overflow-hidden bg-ink text-white">
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="blob -right-20 -top-20 h-80 w-80 bg-brand-violet opacity-40" />
-        <div
-          className="blob -bottom-24 left-10 h-72 w-72 bg-brand-pink opacity-30"
-          style={{ animationDelay: "-8s" }}
-        />
-      </div>
-
-      <Container className="relative py-20 md:py-28">
-        <SectionHeading kicker={contact.kicker} tone="dark" />
+    <footer id="contact" className="scroll-mt-20 bg-ink text-white">
+      <Container className="py-20 md:py-28">
         <h2 className="max-w-3xl font-display text-4xl font-bold leading-tight md:text-6xl">
           {contact.title}
         </h2>
@@ -57,15 +48,13 @@ export function Contact({ dict }: { dict: Dictionary }) {
                   : "border-white/30 hover:border-white"
               }`}
             >
-              <span className="font-mono text-xs uppercase tracking-widest opacity-60">
-                {link.label}
-              </span>
+              <span className="text-sm font-semibold opacity-70">{link.label}</span>
               <span>{link.value}</span>
             </a>
           ))}
         </div>
 
-        <p className="mt-10 font-mono text-sm text-white/50">🕐 {contact.timezone}</p>
+        <p className="mt-10 text-sm text-white/60">{contact.timezone}</p>
 
         <div className="mt-20 flex flex-col justify-between gap-2 border-t border-white/10 pt-8 text-sm text-white/50 sm:flex-row">
           <span>© {site.name}</span>

@@ -7,7 +7,6 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Projects } from "@/components/Projects";
 import { Services } from "@/components/Services";
-import { Stats } from "@/components/Stats";
 import { getDictionary, hasLocale } from "@/content/dictionaries";
 
 export default async function Page({ params }: PageProps<"/[lang]">) {
@@ -20,8 +19,7 @@ export default async function Page({ params }: PageProps<"/[lang]">) {
     <>
       <Header dict={dict} lang={lang} />
       <main>
-        <Hero dict={dict} />
-        <Stats dict={dict} />
+        <Hero dict={dict} lang={lang} />
         <FeaturedCase dict={dict} />
         <Projects dict={dict} />
         <Services dict={dict} />

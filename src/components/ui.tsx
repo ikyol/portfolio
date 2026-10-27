@@ -1,14 +1,5 @@
 import type { ReactNode } from "react";
 
-// Accent backgrounds cycled through cards and chips
-export const accents = [
-  "bg-brand-lime",
-  "bg-brand-pink",
-  "bg-brand-violet text-white",
-  "bg-brand-orange",
-  "bg-brand-cyan",
-];
-
 export function Container({
   children,
   className = "",
@@ -39,29 +30,22 @@ export function Chip({
   );
 }
 
-export function SectionHeading({
-  kicker,
-  title,
-  tone = "light",
-}: {
-  kicker: string;
-  title?: string;
-  tone?: "light" | "dark";
-}) {
+export function SectionHeading({ title }: { title: string }) {
   return (
-    <div className="mb-10 md:mb-14">
-      <p
-        className={`font-mono text-sm uppercase tracking-[0.2em] ${
-          tone === "dark" ? "text-brand-lime" : "text-brand-violet"
-        }`}
-      >
-        ✦ {kicker}
-      </p>
-      {title && (
-        <h2 className="mt-3 font-display text-3xl font-bold leading-tight md:text-5xl">
-          {title}
-        </h2>
-      )}
+    <h2 className="mb-10 font-display text-3xl font-bold leading-tight md:mb-14 md:text-5xl">
+      {title}
+    </h2>
+  );
+}
+
+// A measurement track: "before" fills with slate, "after" with lime
+export function MeasureBar({ percent, tone }: { percent: number; tone: "before" | "after" }) {
+  return (
+    <div aria-hidden className="h-5 overflow-hidden rounded-full border-2 border-ink bg-white">
+      <div
+        className={`h-full ${tone === "before" ? "bg-slate" : "bg-brand-lime"}`}
+        style={{ width: `${percent}%` }}
+      />
     </div>
   );
 }

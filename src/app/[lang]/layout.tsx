@@ -1,6 +1,6 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-import { JetBrains_Mono, Manrope, Unbounded } from "next/font/google";
+import { Manrope, Unbounded } from "next/font/google";
 import { notFound } from "next/navigation";
 import { getDictionary, hasLocale, locales } from "@/content/dictionaries";
 import { site } from "@/content/site";
@@ -13,11 +13,6 @@ const unbounded = Unbounded({
 
 const manrope = Manrope({
   variable: "--font-manrope",
-  subsets: ["latin", "cyrillic"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains",
   subsets: ["latin", "cyrillic"],
 });
 
@@ -63,13 +58,8 @@ export default async function RootLayout({
   return (
     <html
       lang={lang}
-      className={`${unbounded.variable} ${manrope.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${unbounded.variable} ${manrope.variable} antialiased`}
     >
-      <head>
-        <noscript>
-          <style>{".reveal{opacity:1;transform:none}"}</style>
-        </noscript>
-      </head>
       <body>
         {children}
         <Analytics />
