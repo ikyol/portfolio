@@ -5,9 +5,9 @@ import { accents, Chip, Container, SectionHeading } from "./ui";
 
 function Label({ children }: { children: string }) {
   return (
-    <h4 className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-muted">
+    <h3 className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.2em] text-muted">
       {children}
-    </h4>
+    </h3>
   );
 }
 
@@ -27,9 +27,9 @@ export function FeaturedCase({ dict }: { dict: Dictionary }) {
                 <Chip className="bg-ink text-white">{c.role}</Chip>
                 <Chip className="bg-white/20 text-white">{c.period}</Chip>
               </div>
-              <h3 className="mt-6 max-w-3xl font-display text-2xl font-bold leading-tight md:text-4xl">
+              <h2 className="mt-6 max-w-3xl font-display text-2xl font-bold leading-tight md:text-4xl">
                 {c.title}
-              </h3>
+              </h2>
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/90 md:text-lg">
                 {c.summary}
               </p>
@@ -79,7 +79,7 @@ export function FeaturedCase({ dict }: { dict: Dictionary }) {
               </div>
 
               <div className="rounded-2xl border-2 border-dashed border-brand-violet bg-brand-violet/5 p-5 md:p-6">
-                <h4 className="font-display text-lg font-bold">🔒 {c.securityTitle}</h4>
+                <h3 className="font-display text-lg font-bold">🔒 {c.securityTitle}</h3>
                 <p className="mt-2 leading-relaxed text-muted">{c.securityText}</p>
               </div>
 

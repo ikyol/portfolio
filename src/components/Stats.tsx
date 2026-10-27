@@ -16,7 +16,7 @@ export function Stats({ dict }: { dict: Dictionary }) {
                 <div className="font-display text-[1.35rem] font-bold leading-tight sm:text-3xl lg:text-[2rem]">
                   {stat.value}
                 </div>
-                <div className="mt-2 text-sm font-semibold opacity-80">{stat.label}</div>
+                <div className="mt-2 text-sm font-semibold">{stat.label}</div>
               </div>
             </Reveal>
           ))}

@@ -25,6 +25,7 @@ const en = {
     contact: "Contact",
   },
   langSwitch: { label: "Language" },
+  menu: { open: "Open menu", close: "Close menu" },
   hero: {
     badge: "Open for freelance projects",
     eyebrow: "Full-stack development · UI/UX design",
@@ -293,6 +294,7 @@ const ru: Dictionary = {
     contact: "Контакты",
   },
   langSwitch: { label: "Язык" },
+  menu: { open: "Открыть меню", close: "Закрыть меню" },
   hero: {
     badge: "Беру новые проекты",
     eyebrow: "Full-stack разработка · UI/UX дизайн",

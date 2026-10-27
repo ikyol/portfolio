@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 // Accent backgrounds cycled through cards and chips
 export const accents = [
   "bg-brand-lime",
-  "bg-brand-pink text-white",
+  "bg-brand-pink",
   "bg-brand-violet text-white",
   "bg-brand-orange",
   "bg-brand-cyan",

@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { JetBrains_Mono, Manrope, Unbounded } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -69,7 +70,10 @@ export default async function RootLayout({
           <style>{".reveal{opacity:1;transform:none}"}</style>
         </noscript>
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

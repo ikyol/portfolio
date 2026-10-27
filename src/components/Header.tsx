@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/content/dictionaries";
 import { locales } from "@/content/locales";
+import { MobileNav } from "./MobileNav";
 
 export function Header({ dict, lang }: { dict: Dictionary; lang: Locale }) {
   const links = [
@@ -30,23 +31,27 @@ export function Header({ dict, lang }: { dict: Dictionary; lang: Locale }) {
           ))}
         </nav>
 
-        <div
-          className="flex rounded-full border-2 border-ink bg-white p-1 text-sm font-bold"
-          role="group"
-          aria-label={dict.langSwitch.label}
-        >
-          {locales.map((locale) => (
-            <Link
-              key={locale}
-              href={`/${locale}`}
-              aria-current={locale === lang ? "page" : undefined}
-              className={`rounded-full px-3 py-1 uppercase transition ${
-                locale === lang ? "bg-ink text-white" : "hover:bg-ink/5"
-              }`}
-            >
-              {locale}
-            </Link>
-          ))}
+        <div className="flex items-center gap-2">
+          <div
+            className="flex rounded-full border-2 border-ink bg-white p-1 text-sm font-bold"
+            role="group"
+            aria-label={dict.langSwitch.label}
+          >
+            {locales.map((locale) => (
+              <Link
+                key={locale}
+                href={`/${locale}`}
+                aria-current={locale === lang ? "page" : undefined}
+                className={`rounded-full px-3 py-1 uppercase transition ${
+                  locale === lang ? "bg-ink text-white" : "hover:bg-ink/5"
+                }`}
+              >
+                {locale}
+              </Link>
+            ))}
+          </div>
+
+          <MobileNav links={links} openLabel={dict.menu.open} closeLabel={dict.menu.close} />
         </div>
       </div>
     </header>
